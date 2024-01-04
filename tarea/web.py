@@ -74,6 +74,7 @@ def predict():
     
     return render_template('index.html', prediccion=resultado)    
 
+
 # Página principal de la web
 
 @app.route('/')
