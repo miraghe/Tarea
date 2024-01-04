@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Predicción tipo Iris</title>
+    </head>
+
+    <style>
+        .row {
+            display: table;
+            clear: both;
+            margin-bottom: 3vh;
+        }
+        
+        .column {
+            float: left;
+            width: 5vw;
+        }
+    </style>
+
+
+    <body>
+        <h1>5073 Tarea 3</h1>
+        <h1>Armando Vélez García</h1>
+        <br>
+        <h2>Predicción tipo Iris</h2>
+        
+        <form action="predict" method="POST">
+            <div class="row">
+                <div class="column">Algoritmo:</div>
+
+                <div class="column">
+                    <select id="algoritmo" name="algoritmo">
+                        <option value="0">Regresión logística</option>
+                        <option value="1">Máquinas de soporte vectorial (SVM)</option>
+                        <option value="2">Árboles de decisión</option>
+                        <option value="3">K Vecinos más próximos (KNN)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">Amplitud:</div>
+
+                <div class="column">
+                    <input type="number" step="0.01" id="amplitud" name="amplitud" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">Longitud:</div>
+
+                <div class="column">
+                    <input type="number" step="0.01" id="longitud" name="longitud" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predicción</button>
+            </div>
+        </form>
+
+        <br>
+        <br>
+        
+        <h3>{{ prediccion }}</h3>
+    </body>
+</html>
